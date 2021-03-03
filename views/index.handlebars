@@ -11,12 +11,24 @@
           <p> {{{this.rating}}} </p>
         </div>
         <div class="card-footer">
-          <button type="button" class="btn btn-info">edit</button>
+          <a href="./restaurants/{{this._id}}/edit">edit</a>
           <a href="./restaurants/{{this._id}}"> detail</a>
-          <button type="button" class="btn btn-info">delete</button>
+          <form action="/restaurants/{{this._id}}/delete" method="POST">
+            <button type="submit" onclick="return confirmBtn()">delete</button>
+          </form>
         </div>
       </div>
     </div>
     {{/each}}
   </div>
+  <script>
+    function confirmBtn() {
+      const yes = confirm('確定要刪除嗎？')
+      if (yes) {
+        return true
+      } else {
+        return false
+      }
+    }
+  </script>
 </div>
