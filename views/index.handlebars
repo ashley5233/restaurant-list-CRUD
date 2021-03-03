@@ -1,12 +1,19 @@
 {{!-- card --}}
 <div class="container">
   <div class="row">
-    {{#each restaurant}}
+    {{#each restaurants}}
     <div class="col-sm-4 mt-6">
       <div class="card" style="width: 18rem;">
         <img src="{{this.image}}" class="card-img-top" alt="image">
         <div class="card-body">
           <h5 class="card-title">{{this.name}}</h5>
+          <p> {{this.category}}</p>
+          <p> {{{this.rating}}} </p>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-info">edit</button>
+          <a href="./restaurants/{{this._id}}"> detail</a>
+          <button type="button" class="btn btn-info">delete</button>
         </div>
       </div>
     </div>
