@@ -6,12 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/stylesheets/bootstrap.css">
+  <link rel="stylesheet" href="/stylesheets/index.css">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
   <title>Restaurant List</title>
 </head>
 
 <body>
   {{!-- navigation --}}
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg nav-bar">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">restaurants</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -20,12 +25,18 @@
       </button>
     </div>
   </nav>
+  {{!-- title-image --}}
+  <div class="title-image">
+  </div>
   {{!-- search bar --}}
-  <div class="container-fluid">
-    <form action="/search" class="d-flex">
+  <div class="container-fluid search-bar">
+    <form action="/search" class="search-form">
       <input class="form-control me-2" type="text" name="keyword" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
+    <div class="btns">
+      <a href="/restaurants/new" class="add-list">add</a>
+    </div>
   </div>
   {{!-- render --}}
   {{{body}}}

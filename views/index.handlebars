@@ -7,14 +7,17 @@
         <img src="{{this.image}}" class="card-img-top" alt="image">
         <div class="card-body">
           <h5 class="card-title">{{this.name}}</h5>
-          <p> {{this.category}}</p>
-          <p> {{{this.rating}}} </p>
+          <p> <i class="fas fa-utensils"></i> {{this.category}}</p>
+          <p class="card-rate"> <i class="fas fa-star"></i> {{{this.rating}}} </p>
         </div>
         <div class="card-footer">
-          <a href="./restaurants/{{this._id}}/edit">edit</a>
-          <a href="./restaurants/{{this._id}}"> detail</a>
-          <form action="/restaurants/{{this._id}}/delete" method="POST">
-            <button type="submit" onclick="return confirmBtn()">delete</button>
+          <a class="cardBtn" href="./restaurants/{{this._id}}"> <i class="fas fa-info-circle"></i> Info</a>
+          <form action="/restaurants/{{this._id}}/edit" method="GET" class="btnForm">
+            <button class="btn-edit" type="submit"><i class="fas fa-edit"></i></button>
+          </form>
+          <form action="/restaurants/{{this._id}}/delete" method="POST" class="btnForm">
+            <button class="btn-edit" type="submit" onclick="return confirmBtn()"><i
+                class="fas fa-trash-alt"></i></button>
           </form>
         </div>
       </div>

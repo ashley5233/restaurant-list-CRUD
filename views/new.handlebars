@@ -1,0 +1,50 @@
+<div class="container-fluid ">
+  <h2>新增餐廳</h2>
+  <form action="/restaurants/new" method="POST" class="add-new-restaurants">
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <p>*餐廳名稱 ：</p>
+        <input type="text" name="name" placeholder="name">
+      </div>
+      <div class="col-sm-6">
+        <p>*餐廳電話 ：</p>
+        <input type="text" name="phone" placeholder="phone">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <p>餐廳類型 ：</p>
+        <input type="text" name="category" placeholder="category">
+      </div>
+      <div class="col-sm-6">
+        <p>評分 ： </p>
+        <input type="text" name="rating" placeholder="rating">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-12">
+        <p>地址 ：</p>
+        <input type="text" name="location" placeholder="location" class="form-control">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">圖片網址：</label>
+      <input type="text" name="image" placeholder="image address" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Google Map 網址：</label>
+      <input type="text" name="google_map" placeholder="google_map address" class="form-control">
+    </div>
+    <div class="mb-3 input-group-lg">
+      <label for="exampleInputEmail1" class="form-label">餐廳描述：</label>
+      <input type="text" name="description" placeholder="description" class="form-control">
+    </div>
+    <button type="submit" onclick="return saveBtn()"> Save</button>
+  </form>
+</div>
+
+<script>
+  function saveBtn() {
+    return alert('已新增餐廳！')
+  }
+</script>

@@ -41,6 +41,27 @@ app.get('/search', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// add new restaurant
+app.get('/restaurants/new', (req, res) => {
+  return res.render('new')
+})
+
+app.post('/restaurants/new', (req, res) => {
+  const newRestaurant = req.body
+  return RestaurantList.create({
+    name: newRestaurant.name,
+    category: newRestaurant.category,
+    image: newRestaurant.image,
+    location: newRestaurant.location,
+    phone: newRestaurant.phone,
+    google_map: newRestaurant.google_map,
+    rating: newRestaurant.rating,
+    description: newRestaurant.description
+  })
+    .then(res.redirect('/'))
+    .catch(error => console.log(error))
+})
+
 //render detail
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
