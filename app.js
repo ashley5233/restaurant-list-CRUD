@@ -83,9 +83,23 @@ app.get('/restaurants/:id/edit', (req, res) => {
 app.post('/restaurants/:id/edit', (req, res) => {
   const id = req.params.id
   const name = req.body.name
+  const phone = req.body.phone
+  const category = req.body.category
+  const rating = req.body.rating
+  const location = req.body.location
+  const image = req.body.image
+  const google_map = req.body.google_map
+  const description = req.body.description
   return RestaurantList.findById(id)
     .then((restaurants) => {
       restaurants.name = name
+      restaurants.phone = phone
+      restaurants.category = category
+      restaurants.rating = rating
+      restaurants.location = location
+      restaurants.image = image
+      restaurants.google_map = google_map
+      restaurants.description = description
       return restaurants.save()
     })
     .then(() => res.redirect(`/restaurants/${id}`))

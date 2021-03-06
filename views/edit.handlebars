@@ -1,4 +1,54 @@
-<form action="/restaurants/{{restaurants._id}}/edit" method="POST">
-  <input type="text" name="name" placeholder="name" value="{{restaurants.name}}">
-  <button type="submit">submit </button>
-</form>
+<div class="edit-page">
+  <form action="/restaurants/{{restaurants._id}}/edit" method="POST">
+    <h2 class="new-title">修改餐廳</h2>
+    <hr>
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <p>*餐廳名稱 ：</p>
+        <input type="text" name="name" placeholder="name" value="{{restaurants.name}}">
+      </div>
+      <div class="col-sm-6">
+        <p>餐廳電話 ：</p>
+        <input type="text" name="phone" placeholder="phone" value="{{restaurants.phone}}">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-6">
+        <p>*餐廳類型 ：</p>
+        <input type="text" name="category" placeholder="category" value="{{restaurants.category}}">
+      </div>
+      <div class="col-sm-6">
+        <p>*評分 ： </p>
+        <input type="text" name="rating" placeholder="rating" value="{{restaurants.rating}}">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-12">
+        <p>地址 ：</p>
+        <input type="text" name="location" placeholder="location" class="form-control" value="{{restaurants.location}}">
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">*圖片網址：</label>
+      <input type="text" name="image" placeholder="image address" class="form-control" value="{{restaurants.image}}">
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Google Map 網址：</label>
+      <input type="text" name="google_map" placeholder="google_map address" class="form-control"
+        value="{{restaurants.google_map}}">
+    </div>
+    <div class="mb-3 input-group-lg">
+      <label for="exampleInputEmail1" class="form-label">餐廳描述：</label>
+      <input type="text" name="description" placeholder="description" class="form-control"
+        value="{{restaurants.description}}">
+    </div>
+    <button type="submit" onclick="return saveBtn()"> Save</button>
+  </form>
+
+</div>
+
+<script>
+  function saveBtn() {
+    return alert('已修改完成！')
+  }
+</script>

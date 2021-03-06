@@ -16,13 +16,24 @@
 
 <body>
   {{!-- navigation --}}
-  <nav class="navbar navbar-expand-lg nav-bar">
+  {{!-- <nav class="navbar navbar-expand-lg nav-bar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/">restaurants</a>
+      <a class="navbar-brand" href="#">restaurants</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
+    </div>
+  </nav> --}}
+  <nav class="navbar">
+    <div class="container-fluid nav-btn">
+      <a class="navbar-brand" href="/">
+        <img src="https://res.cloudinary.com/dnivakimu/image/upload/v1611590929/IMG_0070_cdnfmy.png" alt="" width="50"
+          height="50">
+        Restaurant List
+      </a>
+      <a href="/restaurants/new" class="add-list"><i class="fas fa-plus-circle"></i> 新增餐廳</a>
     </div>
   </nav>
   {{!-- title-image --}}
@@ -31,13 +42,13 @@
   {{!-- search bar --}}
   <div class="container-fluid search-bar">
     <form action="/search" class="search-form">
-      <input class="form-control me-2" type="text" name="keyword" placeholder="Search" aria-label="Search">
+      <input class="form-control me-2" type="text" name="keyword" placeholder="Search Restaurant..."
+        aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
-    <div class="btns">
-      <a href="/restaurants/new" class="add-list">add</a>
-    </div>
+
   </div>
+
   {{!-- render --}}
   {{{body}}}
 

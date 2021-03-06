@@ -1,5 +1,6 @@
-<div class="container-fluid ">
-  <h2>新增餐廳</h2>
+<div class="container-fluid new-page">
+  <h2 class="new-title">新增餐廳</h2>
+  <hr>
   <form action="/restaurants/new" method="POST" class="add-new-restaurants">
     <div class="row mb-3">
       <div class="col-sm-6">
@@ -7,17 +8,17 @@
         <input type="text" name="name" placeholder="name">
       </div>
       <div class="col-sm-6">
-        <p>*餐廳電話 ：</p>
+        <p>餐廳電話 ：</p>
         <input type="text" name="phone" placeholder="phone">
       </div>
     </div>
     <div class="row mb-3">
       <div class="col-sm-6">
-        <p>餐廳類型 ：</p>
+        <p>*餐廳類型 ：</p>
         <input type="text" name="category" placeholder="category">
       </div>
       <div class="col-sm-6">
-        <p>評分 ： </p>
+        <p>*評分 ： </p>
         <input type="text" name="rating" placeholder="rating">
       </div>
     </div>
@@ -28,7 +29,7 @@
       </div>
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">圖片網址：</label>
+      <label for="exampleInputEmail1" class="form-label">*圖片網址：</label>
       <input type="text" name="image" placeholder="image address" class="form-control">
     </div>
     <div class="mb-3">
