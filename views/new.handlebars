@@ -5,7 +5,7 @@
     <div class="row mb-3">
       <div class="col-sm-6">
         <label class="form-label" for="name">*餐廳名稱 ：</label>
-        <input class="form-control" type="text" name="name" placeholder="name" required>
+        <input class="form-control" type="text" name="name" placeholder="name" maxlength="10" required>
         <div class="invalid-feedback">
           Please provide a valid city.
         </div>
@@ -18,7 +18,8 @@
     <div class="row mb-3">
       <div class="col-sm-6">
         <label class="form-label" for="category">*餐廳類型 ：</label>
-        <input class="form-control" list="categorys" name="category" placeholder="category" id="category" required>
+        <input class="form-control" list="categorys" name="category" placeholder="category" id="category" maxlength="5"
+          required>
         <datalist id="categorys">
           <option>中東料理</option>
           <option>日本料理</option>

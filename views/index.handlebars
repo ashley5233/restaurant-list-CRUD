@@ -4,16 +4,17 @@
     <label class="search-title" for="keyword"> search for restaurants...</label>
     <div class="input-group search-input">
       <input class="form-control" type="text" name="keyword" placeholder="Search Restaurant..." aria-label="Search">
-      <button class="btn btn-outline-info" type="submit"><i class="fas fa-search"></i></button>
+      <button class="btn btn-info" type="submit"><i class="fas fa-search"></i></button>
     </div>
   </form>
 </div>
+
 
 {{!-- card --}}
 <div class="container">
   <div class="row">
     {{#each restaurants}}
-    <div class="col-sm-4">
+    <div class="col-md-auto">
       <div class="card" style="width: 18rem;">
         <img src="{{this.image}}" class="card-img-top" alt="image">
         <div class="card-body">

@@ -5,7 +5,8 @@
     <div class="row mb-3">
       <div class="col-sm-6">
         <label class="form-label" for="name">餐廳名稱 ：</label>
-        <input class="form-control" type="text" name="name" placeholder="name" value="{{restaurants.name}}" required>
+        <input class="form-control" type="text" name="name" placeholder="name" value="{{restaurants.name}}"
+          maxlength="10" required>
       </div>
       <div class="col-sm-6">
         <label class="form-label" for="phone">餐廳電話 ：</label>
@@ -16,7 +17,7 @@
       <div class="col-sm-6">
         <label class="form-label" for="category">餐廳類型 ：</label>
         <input class="form-control" list="categorys" name="category" placeholder="category" id="category"
-          value="{{restaurants.category}}" required>
+          value="{{restaurants.category}}" maxlength="5" required>
         <datalist id="categorys">
           <option>中東料理</option>
           <option>日本料理</option>
