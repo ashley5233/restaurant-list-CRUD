@@ -1,8 +1,13 @@
-<div class="restaurant-detail">
-  <img src="{{restaurants.image}}" alt="restaurant-image" style="height: 300px; ">
-  <h1>{{restaurants.name}}</h1>
-  <p>{{restaurants.category}}</p>
-  <p> 地址：{{restaurants.location}}</p>
-  <p> 電話：{{restaurants.phone}}</p>
-  <p>{{restaurants.description}}</p>
+<div class="row restaurant-detail">
+  <div class="col-5">
+    <img src="{{restaurants.image}}" alt="restaurant-image" class="detail-image" style="height: 300px; ">
+  </div>
+  <div class="col-7">
+    <h1>{{restaurants.name}}</h1>
+    <p class="detail-category">{{restaurants.category}}</p>
+    <p> 地址：{{restaurants.location}} <a href="{{restaurants.google_map}}"><i class="fas fa-location-arrow"></i></a> </p>
+    <p> 電話：{{restaurants.phone}}</p>
+    <p>{{restaurants.description}}</p>
+  </div>
+
 </div>

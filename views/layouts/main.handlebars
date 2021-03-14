@@ -10,50 +10,64 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  {{!-- google fonts --}}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
   <title>Restaurant List</title>
 </head>
 
 <body>
   {{!-- navigation --}}
-  {{!-- <nav class="navbar navbar-expand-lg nav-bar">
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">restaurants</a>
+      <a class="navbar-brand" href="/">.and Restaurant</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-
-    </div>
-  </nav> --}}
-  <nav class="navbar">
-    <div class="container-fluid nav-btn">
-      <a class="navbar-brand" href="/">
-        <img src="https://res.cloudinary.com/dnivakimu/image/upload/v1611590929/IMG_0070_cdnfmy.png" alt="" width="50"
-          height="50">
-        Restaurant List
-      </a>
-      <a href="/restaurants/new" class="add-list"><i class="fas fa-plus-circle"></i> 新增餐廳</a>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+        </ul>
+        <a href="/restaurants/new"><button class="btn btn-info"><i class="fas fa-plus-circle"></i>
+            Add Restaurant</a></button>
+      </div>
     </div>
   </nav>
-  {{!-- title-image --}}
-  <div class="title-image">
-  </div>
-  {{!-- search bar --}}
-  <div class="container-fluid search-bar">
-    <form action="/search" class="search-form">
-      <input class="form-control me-2" type="text" name="keyword" placeholder="Search Restaurant..."
-        aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+  <div class="body-container">
+
+    {{!-- title-image --}}
+    <div class="title-image">
+    </div>
+
+    {{!-- render --}}
+    {{{body}}}
+
+    {{!-- bootstraps --}}
 
   </div>
-
-  {{!-- render --}}
-  {{{body}}}
-
-  {{!-- bootstraps --}}
-
 
   <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
   <script src="/javascripts/jquery-3.5.1.js"></script>
