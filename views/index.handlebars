@@ -16,7 +16,11 @@
     {{#each restaurants}}
     <div class="col-md-auto">
       <div class="card" style="width: 18rem;">
-        <img src="{{this.image}}" class="card-img-top" alt="image">
+        <div class="inner">
+          <a href="./restaurants/{{this._id}}">
+            <img src="{{this.image}}" class="card-img-top" alt="image">
+          </a>
+        </div>
         <div class="card-body">
           <h5 class="card-title">{{this.name}}</h5>
           <p> <i class="fas fa-utensils"></i> {{this.category}}</p>

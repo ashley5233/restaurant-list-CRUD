@@ -105,6 +105,18 @@ a {
   object-fit: cover;
   cursor: pointer;
 }
+/* card 動畫 */
+.inner {
+  overflow: hidden;
+}
+
+.inner img {
+  transition: all 1.5s ease;
+}
+
+.inner:hover img {
+  transform: scale(1.1);
+}
 
 /* card-footer */
 .card-footer {
