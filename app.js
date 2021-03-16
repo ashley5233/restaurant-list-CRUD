@@ -33,7 +33,6 @@ app.get('/', (req, res) => {
 
 // search bar
 app.get('/search', (req, res) => {
-  const keyword = req.query.keyword
   const regex = new RegExp(escapeRegex(req.query.keyword), 'gi')
   RestaurantList.find({ name: regex })
     .lean()
@@ -47,16 +46,17 @@ app.get('/restaurants/new', (req, res) => {
 })
 
 app.post('/restaurants/new', (req, res) => {
-  const newRestaurant = req.body
+  //Destructuring Assignment
+  const { name, category, image, location, phone, google_map, rating, description } = req.body
   return RestaurantList.create({
-    name: newRestaurant.name,
-    category: newRestaurant.category,
-    image: newRestaurant.image,
-    location: newRestaurant.location,
-    phone: newRestaurant.phone,
-    google_map: newRestaurant.google_map,
-    rating: newRestaurant.rating,
-    description: newRestaurant.description
+    name: name,
+    category: category,
+    image: image,
+    location: location,
+    phone: phone,
+    google_map: google_map,
+    rating: rating,
+    description: description
   })
     .then(res.redirect('/'))
     .catch(error => console.log(error))
@@ -82,14 +82,8 @@ app.get('/restaurants/:id/edit', (req, res) => {
 
 app.post('/restaurants/:id/edit', (req, res) => {
   const id = req.params.id
-  const name = req.body.name
-  const phone = req.body.phone
-  const category = req.body.category
-  const rating = req.body.rating
-  const location = req.body.location
-  const image = req.body.image
-  const google_map = req.body.google_map
-  const description = req.body.description
+  //Destructuring Assignment 
+  const { name, category, image, location, phone, google_map, rating, description } = req.body
   return RestaurantList.findById(id)
     .then((restaurants) => {
       restaurants.name = name
