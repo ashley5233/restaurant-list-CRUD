@@ -31,7 +31,7 @@
           <form action="/restaurants/{{this._id}}/edit" method="GET" class="btnForm">
             <button class="btn-edit" type="submit"><i class="fas fa-edit"></i></button>
           </form>
-          <form action="/restaurants/{{this._id}}/delete" method="POST" class="btnForm">
+          <form action="/restaurants/{{this._id}}?_method=DELETE" method="POST" class="btnForm">
             <button class="btn-edit" type="submit" onclick="return confirmBtn()"><i
                 class="fas fa-trash-alt"></i></button>
           </form>

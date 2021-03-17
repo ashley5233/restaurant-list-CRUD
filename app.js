@@ -1,6 +1,7 @@
 const express = require('express')
 const RestaurantList = require('./models/restaurantList')
 const exphbs = require('express-handlebars')
+const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const app = express()
@@ -22,6 +23,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use(methodOverride('_method'))
 
 // render index
 app.get('/', (req, res) => {
@@ -80,7 +82,7 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
-app.post('/restaurants/:id/edit', (req, res) => {
+app.put('/restaurants/:id/', (req, res) => {
   const id = req.params.id
   //Destructuring Assignment 
   const { name, category, image, location, phone, google_map, rating, description } = req.body
@@ -101,7 +103,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
 })
 
 //delete
-app.post('/restaurants/:id/delete', (req, res) => {
+app.delete('/restaurants/:id/', (req, res) => {
   const id = req.params.id
   return RestaurantList.findById(id)
     .then(restaurants => {
