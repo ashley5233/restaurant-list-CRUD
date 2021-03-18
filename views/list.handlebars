@@ -1,0 +1,32 @@
+<div class="list-container">
+  <div class="row btn-group">
+    <div class="col">
+      <a href="/"><i class="list-btn fas fa-th-list"></i></a>
+    </div>
+    <div class="col">
+      <a href="/list"><i class="list-btn fas fa-list"></i></a>
+    </div>
+  </div>
+  <table class="table thead-light table-list">
+    <thead>
+      <tr>
+        <th scope="col">Restaurant name</th>
+        <th scope="col">category</th>
+        <th scope="col">Rating</th>
+        <th class="table-btn" cope="col">Infomation</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each restaurants}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.category}}</td>
+        <td>{{this.rating}}</td>
+        <td class="table-btn"><button type="button" class="btn btn-info"><a href="./restaurants/{{this._id}}">
+              Detail</button></td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+</div>

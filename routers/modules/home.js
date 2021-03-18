@@ -10,4 +10,12 @@ router.get('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+//render list model
+router.get('/list', (req, res) => {
+  return RestaurantList.find()
+    .lean()
+    .then(restaurants => res.render('list', { restaurants }))
+    .catch(error => console.log(error))
+})
+
 module.exports = router

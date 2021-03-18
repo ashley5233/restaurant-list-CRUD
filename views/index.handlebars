@@ -9,8 +9,36 @@
   </form>
 </div>
 
-{{!-- card --}}
+
 <div class="container">
+  {{!-- Sort & List Btn --}}
+  <div class="row btn-group" role="group">
+    <div class="col">
+      <a href="/"><i class="list-btn fas fa-th-list"></i></a>
+    </div>
+    <div class="col">
+      <a href="/list"><i class="list-btn fas fa-list"></i></a>
+    </div>
+    <div class="col">
+      {{!-- sort --}}
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle sort-btn" type="button" id="dropdownMenuButton1"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          -Select-
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="/sort/name/asc">名稱 A-Z</a></li>
+          <li><a class="dropdown-item" href="/sort/name/desc">名稱 A-Z</a></li>
+          <li><a class="dropdown-item" href="/sort/category/asc">類型 A-Z</a></li>
+          <li><a class="dropdown-item" href="/sort/category/desc">類型 Z-A</a></li>
+          <li><a class="dropdown-item" href="/sort/rating/desc">評分-由高至低</a></li>
+          <li><a class="dropdown-item" href="/sort/rating/asc">評分-由低至高</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  {{!-- card --}}
   <div class="row">
     {{#each restaurants}}
     <div class="col-md-auto">
@@ -52,4 +80,5 @@
       }
     }
   </script>
+
 </div>

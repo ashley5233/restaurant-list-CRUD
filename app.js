@@ -5,8 +5,9 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 const routers = require('./routers')
-
 require('./config/mongoose')
+
+
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))

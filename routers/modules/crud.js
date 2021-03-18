@@ -33,6 +33,7 @@ router.get('/:id', (req, res) => {
     .catch(error => console.log(error))
 })
 
+
 //render edit
 router.get('/:id/edit', (req, res) => {
   const id = req.params.id
