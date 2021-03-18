@@ -1,14 +1,7 @@
-const mongoose = require('mongoose')
 const RestaurantList = require('../restaurantList')
 const restJosn = require('./restaurant.json')
+const db = require('../../config/mongoose')
 
-mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
-
-const db = mongoose.connection
-
-db.on('error', () => {
-  console.log(error)
-})
 
 //新增餐廳JOSN檔案
 db.once('open', () => {
