@@ -2,8 +2,7 @@ const express = require('express')
 const router = express.Router()
 const RestaurantList = require('../../models/restaurantList')
 
-
-// search bar
+//search bar regex方法
 router.get('/', (req, res) => {
   const regex = new RegExp(escapeRegex(req.query.keyword), 'gi')
   RestaurantList.find({ name: regex })

@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars')
 const methodOverride = require('method-override')
 const bodyParser = require('body-parser')
 const app = express()
-const port = 3000
+const PORT = process.env.PORT || 3000
 const routers = require('./routers')
 require('./config/mongoose')
 
@@ -16,6 +16,6 @@ app.use(methodOverride('_method'))
 app.use(routers)
 
 
-app.listen(port, () => {
-  console.log(`express is running on http://localhost:${port}`)
+app.listen(PORT, () => {
+  console.log(`express is running on http://localhost:${PORT}`)
 })
